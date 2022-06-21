@@ -32,6 +32,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\LinkedListChallenges\LinkedList.cs" />
+    <Compile Include="src\Arrays\ArrayChallenges.cs" />
+    <Compile Include="src\Arrays\LinqChallenge.cs" />
+    <Compile Include="src\Arrays\StringChallenge.cs" />
+    <Compile Include="src\Trees Challenges\BinaryTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\LinkedListChallenges\" />
+    <Folder Include="src\Arrays\" />
+    <Folder Include="src\Trees Challenges\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace dotnetchallenge.Arrays
@@ -64,7 +64,42 @@ namespace dotnetchallenge.Arrays
             }
             return true;
         }
-
-      
+          public static bool IsUniqueStringWithMinimizedSpace(string str)
+          {
+      int checker = 0;
+      for (int i = 0; i < str.Length; i++)
+      {
+        int val = str.ElementAt(i) - 'a';
+        if ((checker & (1 << val)) > 0)
+        {
+          return false;
+        }
+        checker |= (1 << val);
+          
+      }
+      return true;
+    }
+    //We can also use the definition of a permutation-two words with the same character counts-to implement this algorithm. We simply iterate through this code, counting how many times each character appears.
+    //Then, afterwards, we compare the two arrays.
+    public static bool Permutation(string s, string t)
+    {
+      if (s.Length != t.Length) return false;
+      int[] char_set = new int[128];
+      char[] sArray = s.ToCharArray();
+      foreach (var i in sArray)
+      {
+        char_set[i]++;
+      }
+      for (int i = 0; i < t.Length; i++)
+      {
+        int val =(int) t.ElementAt(i);
+        char_set[val]--;
+        if (char_set[val] <0)
+        {
+          return false;
+        }
+      }
+      return true;
+    }
     }
 }

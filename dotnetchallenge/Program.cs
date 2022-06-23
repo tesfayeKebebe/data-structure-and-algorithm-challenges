@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using dotnetchallenge.Arrays;
 using dotnetchallenge.LinkedListChallenges;
+using dotnetchallenge.src.Numbers;
 using dotnetchallenge.TreesChallenges;
 
 namespace dotnetchallenge
@@ -39,6 +40,7 @@ namespace dotnetchallenge
            var bitVector = StringChallenge.IsUniqueStringWithMinimizedSpace("tesfaye");
             var uniqueBitVector = StringChallenge.IsUniqueStringWithMinimizedSpace("tesfa");   */
       var IsPermutations = StringChallenge.Permutation("dogo", "ogod");
+          var x=  NumberChallenge.Reverse(-12300);
     }
     }
 }

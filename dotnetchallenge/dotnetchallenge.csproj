@@ -37,12 +37,14 @@
     <Compile Include="src\Arrays\LinqChallenge.cs" />
     <Compile Include="src\Arrays\StringChallenge.cs" />
     <Compile Include="src\Trees Challenges\BinaryTree.cs" />
+    <Compile Include="src\Numbers\NumberChallenge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\LinkedListChallenges\" />
     <Folder Include="src\Arrays\" />
     <Folder Include="src\Trees Challenges\" />
+    <Folder Include="src\Numbers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

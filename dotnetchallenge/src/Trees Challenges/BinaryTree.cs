@@ -8,12 +8,12 @@ namespace dotnetchallenge.TreesChallenges
         {
             
             if(low>high)
-            {
+              {
                 return -1;
             }
-            int mid = (low + high) / 2;
+            int mid = (low + high) / 2;  
             if(a[mid]==target)
-            {
+            {     
                 return a[mid];
             }
             else if(target > a[mid])

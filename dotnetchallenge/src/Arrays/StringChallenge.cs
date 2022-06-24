@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Text;
 
 namespace dotnetchallenge.Arrays
 {
@@ -55,7 +56,7 @@ namespace dotnetchallenge.Arrays
             for (int i = 0; i < str.Length; i++)
             {
                 int val = str.ElementAt(i);
-                if(char_set[val])
+                if (char_set[val])
                 {
                     return false;
                 }
@@ -64,49 +65,49 @@ namespace dotnetchallenge.Arrays
             }
             return true;
         }
-          public static bool IsUniqueStringWithMinimizedSpace(string str)
-          {
-      int checker = 0;
-      for (int i = 0; i < str.Length; i++)
-      {
-        int val = str.ElementAt(i) - 'a';
-        if ((checker & (1 << val)) > 0)
+        public static bool IsUniqueStringWithMinimizedSpace(string str)
         {
-          return false;
+            int checker = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                int val = str.ElementAt(i) - 'a';
+                if ((checker & (1 << val)) > 0)
+                {
+                    return false;
+                }
+                checker |= (1 << val);
+
+            }
+            return true;
         }
-        checker |= (1 << val);
-          
-      }
-      return true;
-    }
-    //We can also use the definition of a permutation-two words with the same character counts-to implement this algorithm. We simply iterate through this code, counting how many times each character appears.
-    //Then, afterwards, we compare the two arrays.
-    public static bool Permutation(string s, string t)
-    {
-      if (s.Length != t.Length) return false;
-      int[] char_set = new int[128];
-      char[] sArray = s.ToCharArray();
-      foreach (var i in sArray)
-      {
-        char_set[i]++;
-      }
-      for (int i = 0; i < t.Length; i++)
-      {
-        int val =(int) t.ElementAt(i);
-        char_set[val]--;
-        if (char_set[val] <0)
+        //We can also use the definition of a permutation-two words with the same character counts-to implement this algorithm. We simply iterate through this code, counting how many times each character appears.
+        //Then, afterwards, we compare the two arrays.
+        public static bool Permutation(string s, string t)
         {
-          return false;
+            if (s.Length != t.Length) return false;
+            int[] char_set = new int[128];
+            char[] sArray = s.ToCharArray();
+            foreach (var i in sArray)
+            {
+                char_set[i]++;
+            }
+            for (int i = 0; i < t.Length; i++)
+            {
+                int val = (int)t.ElementAt(i);
+                char_set[val]--;
+                if (char_set[val] < 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
-      }
-      return true;
-    }
         //Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
         //In other words, return true if one of s1's permutations is the substring of s2.
-       /* Example
-        Input: s1 = "ab", s2 = "eidbaooo"
-Output: true
-Explanation: s2 contains one permutation of s1("ba").*/
+        /* Example
+         Input: s1 = "ab", s2 = "eidbaooo"
+ Output: true
+ Explanation: s2 contains one permutation of s1("ba").*/
         public static bool CheckInclusion(string s1, string s2)
         {
             if (s1.Length > s2.Length)
@@ -142,6 +143,16 @@ Explanation: s2 contains one permutation of s1("ba").*/
             }
             return count == 26;
 
+        }
+        public static void ReverseString(char[] s)
+        {
+
+            string c = "";
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                c = c + s[i];
+            }
+            s = c.ToCharArray();
         }
     }
 }

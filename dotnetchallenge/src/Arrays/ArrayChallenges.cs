@@ -11,22 +11,22 @@ namespace dotnetchallenge.Arrays
     public static class ArrayChallenges
     {
 
-        public static void ShiftingToLeft(int[] arr)
+        public static void ShiftingToRight(int[] arr)
         {
-            if (arr.Length > 0)
+            if (arr.Length > 1)
             {
-                int x = arr[0];
-                for (int i = 0; i < arr.Length - 1; i++)
+                int x = arr[arr.Length-1];
+                for (int i = arr.Length-2; i >0; i--)
                 {
-                    arr[i] = arr[i + 1];
+                    arr[i+1] = arr[i];
                     Console.WriteLine(arr[i + 1]);
                 }
-                arr[arr.Length - 1] = x;
-                Console.WriteLine(arr[arr.Length - 1]);
+                arr[0] = x;
+                Console.WriteLine(arr[0]);
             }
 
         }
-        public static void ShiftingToRight(int[] arr)
+        public static void ShiftingToLeft(int[] arr)
         {
             if (arr.Length > 0)
             {
@@ -127,6 +127,37 @@ namespace dotnetchallenge.Arrays
              return sentence;
             }
 
+        //reversal approach of array rotation time complexity o(n) and auxilary place of o(1)
+
+        public static int[] RotateToLeft(int [] arr, int r)
+        {
+            r %= arr.Length;
+            ReverseArr(arr, 0,r- 1);
+            ReverseArr(arr, r, arr.Length - 1);
+            ReverseArr(arr, 0, arr.Length - 1);
+            return arr;
+        }
+        //reverse the last all elements of the given array and then reverse the first
+        //'r' elements followed by reversing the remaining 'n-1' elements
+        public static int[] RotateToRight(int[] arr, int r)
+        {
+            r %= arr.Length;
+            ReverseArr(arr, 0, arr.Length - 1);
+            ReverseArr(arr, 0, r - 1);
+            ReverseArr(arr, r, arr.Length - 1);
+            return arr;
+        }
+        private static void ReverseArr(int[] arr, int start, int end)
+        {
+            while(start<end)
+            {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
+        }
     }
 
 

@@ -80,6 +80,21 @@ namespace dotnetchallenge.Arrays
             }
             return true;
         }
+    /*
+         create permutation using sort method in C#
+       */
+       public static bool IsPermutationUsingSort(string s1, string s2)
+    {
+      if (s1.Length != s2.Length) return false;
+      return Sort(s1).Equals(Sort(s2));
+    }                          
+    private static string  Sort(string s)
+    {
+      char[] sc = new char[s.Length];
+      sc = s.ToCharArray();
+      Array.Sort(sc);
+      return new string(sc);
+    }
         //We can also use the definition of a permutation-two words with the same character counts-to implement this algorithm. We simply iterate through this code, counting how many times each character appears.
         //Then, afterwards, we compare the two arrays.
         public static bool Permutation(string s, string t)
@@ -241,5 +256,33 @@ For example, we know tactcoapapa is a permutation of a palindrome because it has
             return oddCount <= 1;
         }
 
+    /* There are three types of edits that can be performed on strings: insert a character,
+remove a character, or replace a character. Given two strings, write a function to check if they are
+one edit (or zero edits) away. 
+     */
+    public static bool IsOneAway(string sl, string s2)
+    {
+      if (Math.Abs(sl.Length - s2.Length) > 1) return false;
+      int index1 = 0;
+      int index2 = 0;
+      bool IsFoundDifference = false;
+      while(index1 < sl.Length && index2 < s2.Length)
+      {
+         if(sl.ElementAt(index1)!= s2.ElementAt(index2))
+        {
+          /* Ensure that this is the first difference found.*/
+          if (IsFoundDifference) return false;
+          IsFoundDifference = true;
+          if (sl.Length == s2.Length)
+            index1++;
+        }
+          else
+        {
+          index1++; ; // If matching, move shorter pointer
+        }
+        index2++; // Always move pointer for longer string
+      }
+      return true;
     }
+  }
 }

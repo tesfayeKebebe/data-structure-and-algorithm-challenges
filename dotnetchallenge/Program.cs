@@ -3,6 +3,7 @@ using System.Linq;
 using dotnetchallenge.Arrays;
 using dotnetchallenge.LinkedListChallenges;
 using dotnetchallenge.src.Numbers;
+using dotnetchallenge.src.Sortings;
 using dotnetchallenge.TreesChallenges;
 
 namespace dotnetchallenge
@@ -14,6 +15,7 @@ namespace dotnetchallenge
 
             //int x = int.Parse(Console.ReadLine());
             int[] arr = new int[] { 1, 2, 5, 6, 8 };
+
             //ArrayChallenges.ShiftingToLeft(arr);
             //ArrayChallenges.ShiftingToRight(arr);
             //int x = 2;
@@ -41,11 +43,15 @@ namespace dotnetchallenge
                   var uniqueBitVector = StringChallenge.IsUniqueStringWithMinimizedSpace("tesfa");   */
             //var IsPermutations = StringChallenge.Permutation("dogo", "ogod");
             //    var x=  NumberChallenge.Reverse(-12300);
-            // var rotateToLeft = ArrayChallenges.RotateToLeft(new int[] { 1, 2, 3, 4,5 }, 2);
+            //var rotateToLeft = ArrayChallenges.RotateToLeft(new int[] { 1, 2, 3, 4,5 }, 2);
             //var rotateToRigh = ArrayChallenges.RotateToRight(new int[] { 1, 2, 3, 4,5 }, 3);
             // StringChallenge.ReverseString(new char[] { 'h', 'e', 'l', 'l', 'o' });
-           // var newString = StringChallenge.ReplaceAllSpaceInString("Mr John Smith ");
-            var s = StringChallenge.IsPermutationOfPalindrome("tactcoapapa");
-        }
+            //var IsPermutations = StringChallenge.IsPermutationUsingSort("dogo", "ogod");
+            //var IsOneAway = StringChallenge.IsOneAway("pale", "bale");
+            //var IsNotOneAway = StringChallenge.IsOneAway("pale", "bae");
+            //var bubleSort = SortingChallenges.BubleSort(new int[] { 3, 4, 9, 3, 1 });
+            var sum = ArrayChallenges.Sum(new int[] { 2, 7, 11, 15 }, 9);
+
+    }
     }
 }

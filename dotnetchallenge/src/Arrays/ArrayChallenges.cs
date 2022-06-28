@@ -158,7 +158,34 @@ namespace dotnetchallenge.Arrays
                 end--;
             }
         }
+        /*
+         * Given an array of integers, find two numbers such that they add up to a specific target
+number.
+The function twoSum should return indices of the two numbers such that they add
+up to the target, where index1 must be less than index2. Please note that your returned
+answers (both index1 and index2) are not zero-based.
+         */
+        public static int[] Sum(int[] nums, int target)
+        {
+            int[] result = new int[2];
+            Dictionary<int, int> arr = new Dictionary<int, int>();
+            for(int i=0; i<nums.Length; i++)
+            {
+                if(arr.ContainsKey(nums[i]))
+                {
+                    int index = arr[nums[i]];
+                    result[0] = index + 1;
+                    result[1] = i + 1;
+                }
+                else
+                {
+                    arr.Add(target - nums[i], i);
+                }
+            }
+            return result;
+        }
     }
+    
 
 
 

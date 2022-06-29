@@ -284,5 +284,30 @@ one edit (or zero edits) away.
       }
       return true;
     }
+    /* String Compression: Implement a method to perform basic string compression using the counts
+of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
+"compressed" string would not become smaller than the original string, your method should return
+the original string. You can assume the string has only uppercase and lowercase letters (a - z). 
+     */
+      public  static string StringCompression(string s)
+      {
+      StringBuilder b = new StringBuilder();
+      int counter = 0;
+       for(int i=0; i<s.Length; i++)
+      {
+        counter++;
+        if(i+1 >= s.Length || s.ElementAt(i)!=s.ElementAt(i+1))
+        {
+          b.Append(s.ElementAt(i));
+          b.Append(counter);
+          counter = 0;
+        }
+      }
+      return b.Length < s.Length ? b.ToString() : s;
+
+    }
+
+
+
   }
 }

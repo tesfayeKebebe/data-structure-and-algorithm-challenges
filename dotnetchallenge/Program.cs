@@ -51,7 +51,7 @@ namespace dotnetchallenge
             //var IsNotOneAway = StringChallenge.IsOneAway("pale", "bae");
             //var bubleSort = SortingChallenges.BubleSort(new int[] { 3, 4, 9, 3, 1 });
             var sum = ArrayChallenges.Sum(new int[] { 2, 7, 11, 15 }, 9);
-
+      var StringCompression = StringChallenge.StringCompression("aabcccccaaa");
     }
     }
 }

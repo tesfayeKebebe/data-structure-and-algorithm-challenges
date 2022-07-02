@@ -32,9 +32,15 @@ namespace dotnetchallenge
             //var r=  BinaryTree.Recursive(binaryData, 0, binaryData.Length-1, 83);
             //var i=  BinaryTree.IterativeBinarySearch(binaryData, binaryData.Length, 83);
 
-            //Node n = new Node(5);
-            //n.AddingTail(6);
-            //n.AddingTail(8);
+            Node n = new Node(5);
+            n.AddingTail(6);
+            n.AddingTail(8);
+            n.AddingTail(8);
+            n.RemoveDeplicateLinkedList(n);
+
+         
+
+
 
 
             /*var notUnique=   StringChallenge.IsUniqueString("tesfaye");
@@ -51,7 +57,7 @@ namespace dotnetchallenge
             //var IsNotOneAway = StringChallenge.IsOneAway("pale", "bae");
             //var bubleSort = SortingChallenges.BubleSort(new int[] { 3, 4, 9, 3, 1 });
             var sum = ArrayChallenges.Sum(new int[] { 2, 7, 11, 15 }, 9);
-
+      var StringCompression = StringChallenge.StringCompression("aabcccccaaa");
     }
     }
 }

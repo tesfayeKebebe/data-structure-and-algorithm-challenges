@@ -184,7 +184,30 @@ answers (both index1 and index2) are not zero-based.
             }
             return result;
         }
+        public static int DiagonalDifference(List<List<int>> arr)
+        {
+            int pd = 0, sd = 0, length = arr.Count();
+            for (int r = 0; r < length; r++)
+            {
+                for (int c = 0; c < length; c++)
+                {
+                    //principal left to right
+                    if (c == r)
+                    {
+                        pd += arr[r][c];
+                    }
+                    //right to left
+                    if (c + r == length - 1)
+                    {
+                        sd += arr[r][c];
+                    }
+                }
+            }
+            return Convert.ToInt32(Math.Abs(sd - pd));
+
+        }
     }
+
     
 
 

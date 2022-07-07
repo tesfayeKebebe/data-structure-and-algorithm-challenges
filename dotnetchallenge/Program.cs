@@ -32,13 +32,13 @@ namespace dotnetchallenge
       //var r=  BinaryTree.Recursive(binaryData, 0, binaryData.Length-1, 83);
       //var i=  BinaryTree.IterativeBinarySearch(binaryData, binaryData.Length, 83);
 
-      //Node n = new Node(5);
-      //n.AddingTail(6);
-      //n.AddingTail(8);
-      //n.AddingTail(8);
-      //n.AddingTail(6);
-      //n.AddingTail(5);
-      // n.RemoveDeplicateLinkedList(n);
+      Node n = new Node(5);
+      n.AddingTail(6);
+      n.AddingTail(8);
+      n.AddingTail(8);
+      n.AddingTail(6);
+      n.AddingTail(5);
+      n.RemoveDeplicateLinkedList(n);
 
 
 

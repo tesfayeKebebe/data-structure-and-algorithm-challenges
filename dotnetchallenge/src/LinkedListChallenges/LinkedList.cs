@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -36,7 +36,7 @@ will work well here.
 In the below solution, we simply iterate through the linked list, adding each element to a hash table. When
 we discover a duplicate element, we remove the element and continue iterating. We can do this all in one
 pass since we are using a linked list. */
-        public Node RemoveDeplicateLinkedList(Node n)
+        public HashSet<int> RemoveDeplicateLinkedList(Node n)
         {
             /*The HashSet class implements the ICollection, IEnumerable, IReadOnlyCollection, ISet, IEnumerable, IDeserializationCallback, and ISerializable interfaces.
 In HashSet, the order of the element is not defined. You cannot sort the elements of HashSet.
@@ -63,7 +63,7 @@ In HashSet, you can only store the same type of elements.
                 }
                 n = n.Next;
             }
-            return prev;
+            return hs;
         }
     }
   

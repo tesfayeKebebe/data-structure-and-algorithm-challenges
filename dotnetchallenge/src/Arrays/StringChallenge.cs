@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 
 namespace dotnetchallenge.Arrays
 {
@@ -346,7 +348,21 @@ the original string. You can assume the string has only uppercase and lowercase 
             }
             return sum;
         }
+        public bool IsValid(string s)
+        {
+         
+            int n = -1;
+            while (s.Length != n)
+            {
+                n = s.Length;
+                s = s.Replace("()", "");
+                s = s.Replace("[]", "");
+                s = s.Replace("{}", "");
+            }
+            if (n == 0) return true;
+            else return false;
+        }
 
 
-  }
+    }
 }

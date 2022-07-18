@@ -32,16 +32,21 @@ namespace dotnetchallenge
             //var r=  BinaryTree.Recursive(binaryData, 0, binaryData.Length-1, 83);
             //var i=  BinaryTree.IterativeBinarySearch(binaryData, binaryData.Length, 83);
 
-            Node n = new Node(5);
-            n.AddingTail(6);
-            n.AddingTail(8);
-            n.AddingTail(8);
-            n.RemoveDeplicateLinkedList(n);
+            //Node n = new Node(5);
+            //n.AddingTail(6);
+            //n.AddingTail(8);
+            //n.AddingTail(8);
+            //n.RemoveDeplicateLinkedList(n);
+            //char[][] matrix = new char[][] { { '1', '1', '1', '1', '0' }, { '1', '1', '1', '1', '0' } };
+            //ArrayChallenges.NumIslands(matrix);
 
-         
+            //var swapped=   NumberChallenge.SwapNumbersWithoutTemp(10, 25);
 
-
-
+            //   Node n1 = new Node(5);
+            //   n1.Push(6);
+            //   n1.Push(8);
+            //   n1.Push(8);
+            //   n1.Delete(6);
 
             /*var notUnique=   StringChallenge.IsUniqueString("tesfaye");
                         var unique = StringChallenge.IsUniqueString("tesfa");
@@ -56,8 +61,11 @@ namespace dotnetchallenge
             //var IsOneAway = StringChallenge.IsOneAway("pale", "bale");
             //var IsNotOneAway = StringChallenge.IsOneAway("pale", "bae");
             //var bubleSort = SortingChallenges.BubleSort(new int[] { 3, 4, 9, 3, 1 });
-            var sum = ArrayChallenges.Sum(new int[] { 2, 7, 11, 15 }, 9);
-      var StringCompression = StringChallenge.StringCompression("aabcccccaaa");
-    }
+            //      var sum = ArrayChallenges.Sum(new int[] { 2, 7, 11, 15 }, 9);
+            //var StringCompression = StringChallenge.StringCompression("aabcccccaaa");
+
+            int sum = StringChallenge.CalPoints(new string[] { "5", "2", "C", "D", "+" });
+
+        }
     }
 }

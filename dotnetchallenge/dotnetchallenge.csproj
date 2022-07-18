@@ -39,6 +39,7 @@
     <Compile Include="src\Trees Challenges\BinaryTree.cs" />
     <Compile Include="src\Numbers\NumberChallenge.cs" />
     <Compile Include="src\Sortings\SortingChallenges.cs" />
+    <Compile Include="src\Numbers\List.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />

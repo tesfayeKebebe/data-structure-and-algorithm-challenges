@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace dotnetchallenge.src.Numbers
 {
     public static class NumberChallenge
@@ -20,6 +22,15 @@ namespace dotnetchallenge.src.Numbers
 
             }
             return (int)reverse;
+        }
+        public static List<int> SwapNumbersWithoutTemp(int n1, int n2)
+        {
+            n1 = n1 + n2;
+            n2 = n1 - n2;
+            n1 = n1 - n2;
+            return new List<int>
+            { n1,  n2 };
+          
         }
     }
 }

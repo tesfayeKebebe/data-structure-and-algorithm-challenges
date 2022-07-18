@@ -206,6 +206,40 @@ answers (both index1 and index2) are not zero-based.
             return Convert.ToInt32(Math.Abs(sd - pd));
 
         }
+        /*
+         * Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.An island is surrounded by 
+         * water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+         */
+        public static int NumIslands(char[][] grid)
+        {
+            int count = 0;
+            for (int i = 0; i < grid.Length; i++)
+            {
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+                    if (grid[i][j] == '1')
+                    {
+                        count++;
+                        CallBfs(grid, i, j);
+                    }
+
+                }
+            }
+            return count;
+        }
+        public static void CallBfs(char[][] grid, int i, int j)
+        {
+            if (i < 0 || i >= grid.Length || j < 0 || j >= grid[i].Length || grid[i][j] == '0')
+            {
+                return;
+            }
+            grid[i][j] = '0';
+            CallBfs(grid, i + 1, j);// row up
+            CallBfs(grid, i - 1, j); //row down
+            CallBfs(grid, i, j + 1); //column right
+            CallBfs(grid, i, j - 1);  //column left
+        }
     }
 
     

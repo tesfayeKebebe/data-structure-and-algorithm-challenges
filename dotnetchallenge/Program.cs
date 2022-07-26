@@ -12,9 +12,10 @@ namespace dotnetchallenge
     {
         public static void Main(string[] args)
         {
-
-            //int x = int.Parse(Console.ReadLine());
-            int[] arr = new int[] { 1, 2, 5, 6, 8 };
+      var missingNumber = NumberChallenge.SequncialMissingNumber(new int [] { 1, 2, 3, 5 });
+      //var s = StringChallenge.ReverseString("tesfaye");
+      //int x = int.Parse(Console.ReadLine());
+      int[] arr = new int[] { 1, 2, 5, 6, 8 };
 
             //ArrayChallenges.ShiftingToLeft(arr);
             //ArrayChallenges.ShiftingToRight(arr);
@@ -27,18 +28,20 @@ namespace dotnetchallenge
             // int reversed = ArrayChallenges.GetNumberReverse(257);
             //var byts = ArrayChallenges.getFirstSetBit(33);
             // bool isx = StringChallenge.IsPermutation("abcd", "abef");
-             ArrayChallenges.Triangle();
+             //ArrayChallenges.Triangle();
       //  int[] binaryData = new int[] { 3,7,12,15,22,25,30,41,74,83,92,95};
       //var r=  BinaryTree.Recursive(binaryData, 0, binaryData.Length-1, 83);
       //var i=  BinaryTree.IterativeBinarySearch(binaryData, binaryData.Length, 83);
 
-      Node n = new Node(5);
-      n.AddingTail(6);
-      n.AddingTail(8);
-      n.AddingTail(8);
-      n.AddingTail(6);
-      n.AddingTail(5);
-      n.RemoveDeplicateLinkedList(n);
+      //Node n = new Node(5);
+      //n.AddingTail(6);
+      //n.AddingTail(8);
+      //n.AddingTail(8);
+      //n.AddingTail(6);
+      //n.AddingTail(5);
+      //n.RemoveDeplicateLinkedList(n);
+
+
 
 
 
@@ -60,7 +63,7 @@ namespace dotnetchallenge
       //var bubleSort = SortingChallenges.BubleSort(new int[] { 3, 4, 9, 3, 1 });
       // var sum = ArrayChallenges.Sum(new int[] { 2, 7, 11, 15 }, 9);
       //var StringCompression = StringChallenge.StringCompression("aabcccccaaa");
-
+      int factorial = NumberChallenge.Factorial(5);
     }
-    }
+  }
 }

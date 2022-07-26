@@ -308,6 +308,20 @@ the original string. You can assume the string has only uppercase and lowercase 
     }
 
 
+   public static string ReverseString(string i)
+    {
+      char[] arr = i.ToCharArray();
+      StringBuilder b = new StringBuilder();
+for (int r = i.Length - 1; r > 0; r--)
+      {
+        b.Append(arr[r]);
+      }
+      return b.ToString();
+    }
+
+
+
+
 
   }
 }

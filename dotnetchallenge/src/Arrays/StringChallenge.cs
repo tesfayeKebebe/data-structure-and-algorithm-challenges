@@ -348,7 +348,7 @@ the original string. You can assume the string has only uppercase and lowercase 
             }
             return sum;
         }
-        public bool IsValid(string s)
+        public bool IsValidParantheses(string s)
         {
          
             int n = -1;
@@ -361,6 +361,60 @@ the original string. You can assume the string has only uppercase and lowercase 
             }
             if (n == 0) return true;
             else return false;
+        }
+
+        public static bool IsPalindrom( string s)
+        {
+            char[] arr = s.ToCharArray();
+            int st = 0;
+            int end = s.Length - 1;
+            while(st<end)
+            {
+                if(arr[st]!=arr[end])
+                {
+                    return false;
+                }
+                st++;
+                end--;
+            }
+            return true;
+
+        }
+
+        public static bool IsPalindromeFromRemovingAlphanumeric(string s)
+        {
+            if (String.IsNullOrEmpty(s)) return true;
+
+            s = s.ToLower();
+
+            // check palindrome
+            int i = 0;
+            int j = s.Length - 1;
+
+            bool isLetterOrDigitForward = false;
+            bool isLetterOrDigitBack = false;
+            //object x = 5;
+            //bool isx = x is int; // used for checking the type of object
+            //string y = x as string;// as used for conversion
+
+            while (i < j)
+            {
+                isLetterOrDigitForward = Char.IsLetterOrDigit(s[i]);
+                isLetterOrDigitBack = Char.IsLetterOrDigit(s[j]);
+
+                if (isLetterOrDigitForward && isLetterOrDigitBack)
+                {
+                    if (s[i++] != s[j--]) return false;
+                }
+                else
+                {
+                    // Skip non-alphanumeric characters
+                    if (!isLetterOrDigitForward) i++;
+                    if (!isLetterOrDigitBack) j--;
+                }
+            }
+            return true;
+
         }
 
 

@@ -1,3 +1,4 @@
+using System;
 ﻿using System;
 using System.Collections.Generic;
 
@@ -23,6 +24,37 @@ namespace dotnetchallenge.src.Numbers
             }
             return (int)reverse;
         }
+    public static int Factorial(int n)
+    {
+   
+        if(n==1)
+      {
+        return 1;
+      }
+     return  n * Factorial(n - 1);
+      
+     
+      
+    }
+
+    public static int SequncialMissingNumber(int [] numbers)
+    {
+      for(int i=0; i<=numbers.Length-1; i++)  
+      {
+        if(i+1 != numbers[i])
+        {
+          return i + 1;
+        }
+        else
+        {
+          if(i ==numbers.Length-1)
+          {
+            return i + 2;
+          }
+        }
+      }
+      return 0;
+    }
         public static List<int> SwapNumbersWithoutTemp(int n1, int n2)
         {
             n1 = n1 + n2;
@@ -33,4 +65,5 @@ namespace dotnetchallenge.src.Numbers
           
         }
     }
+ 
 }

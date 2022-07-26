@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 
 namespace dotnetchallenge.Arrays
 {
@@ -306,8 +309,62 @@ the original string. You can assume the string has only uppercase and lowercase 
       return b.Length < s.Length ? b.ToString() : s;
 
     }
+        //["5","2","C","D","+"]
+        public static int CalPoints(string[] ops)
+        {
+            int sum = 0;
+            List<int> numbers = new List<int>();
+            for(int i=0; i<ops.Count(); i++)
+            {
+                if(!int.TryParse(ops[i], out int n))
+                {
+                    if(ops[i]=="C")
+                    {
+                        numbers.RemoveAt(i - 1);
+                    }
+                    if(ops[i]=="D")
+                    {
+                        int numb = 1;
+                        for(int j= 0; j<numbers.Count(); j++)
+                        {
+                            numb *= numbers[j] * 2;
+                        }
+                        numbers.Add(numb);
+                    }
+                    if(ops[i]=="+")
+                    {
+                        for (int p = 0; p < numbers.Count(); p++)
+                            sum += numbers[p];
+                        numbers.Add(sum);
+                        sum = 0;
+                        for (int p = 0; p < numbers.Count(); p++)
+                            sum += numbers[p];
+                    }
+                }
+                else
+                {
+                    numbers.Add(Convert.ToInt32(ops[i]));
+                }
+            }
+            return sum;
+        }
+        public bool IsValid(string s)
+        {
+         
+            int n = -1;
+            while (s.Length != n)
+            {
+                n = s.Length;
+                s = s.Replace("()", "");
+                s = s.Replace("[]", "");
+                s = s.Replace("{}", "");
+            }
+            if (n == 0) return true;
+            else return false;
+        }
 
 
+<<<<<<< HEAD
    public static string ReverseString(string i)
     {
       char[] arr = i.ToCharArray();
@@ -324,4 +381,7 @@ for (int r = i.Length - 1; r > 0; r--)
 
 
   }
+=======
+    }
+>>>>>>> 3b6aca54a9e045f7a282397e21b4d6f3aa4dfcaa
 }

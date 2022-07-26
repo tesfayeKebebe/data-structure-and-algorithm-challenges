@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 namespace dotnetchallenge.LinkedListChallenges
 {
+ 
     public class Node
     {
+        Node head;
         public Node Next { get; set; } = null;
         public int Data { get; set; }
         public Node(int data)
@@ -16,11 +18,11 @@ namespace dotnetchallenge.LinkedListChallenges
         {
             #region stack is working based on lifo
             Stack<int> myStack = new Stack<int>();
-            myStack.Push(5);
-            myStack.Push(6);
-            myStack.Push(7);
-            myStack.Peek();
-            myStack.Pop();
+            //myStack.Push(5); add value to the top
+            //myStack.Push(6);
+            //myStack.Push(7);
+            //myStack.Peek(); to take value from top
+           // myStack.Pop(); take and remove value from top
             #endregion
             Node end = new Node(data);
             Node n = this;
@@ -29,6 +31,26 @@ namespace dotnetchallenge.LinkedListChallenges
                 n = n.Next;
             }
             n.Next = end;
+        }
+        //// Inserts a new Node at
+        // front of the list.
+        public void Push(int new_data)
+        {
+            Node atTheBeginning = new Node(new_data);
+            //if (head == null)
+            //{
+            //    head = this;
+            //}
+            atTheBeginning.Next = head;
+            head = atTheBeginning;
+        }
+        public void Delete(int key)
+        {
+            Node node = head;
+            while(node.Data!=key)
+            {
+                node = node.Next;
+            }
         }
         /*
          In order to remove duplicates from a linked list, we need to be able to track duplicates. A simple hash table
@@ -65,6 +87,21 @@ In HashSet, you can only store the same type of elements.
             }
             return hs;
         }
+        public void Reverse()
+        {
+            Node prev = null, current = head, next = null;
+            while(current.Next!=null)
+            {
+                next = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = next;
+            }
+
+        }
     }
+     
+
+
   
 }

@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 using System;
+=======
+﻿using System;
+using System.Collections.Generic;
+
+>>>>>>> 3b6aca54a9e045f7a282397e21b4d6f3aa4dfcaa
 namespace dotnetchallenge.src.Numbers
 {
     public static class NumberChallenge
@@ -21,6 +27,7 @@ namespace dotnetchallenge.src.Numbers
             }
             return (int)reverse;
         }
+<<<<<<< HEAD
     public static int Factorial(int n)
     {
    
@@ -52,6 +59,17 @@ namespace dotnetchallenge.src.Numbers
       }
       return 0;
     }
+=======
+        public static List<int> SwapNumbersWithoutTemp(int n1, int n2)
+        {
+            n1 = n1 + n2;
+            n2 = n1 - n2;
+            n1 = n1 - n2;
+            return new List<int>
+            { n1,  n2 };
+          
+        }
+>>>>>>> 3b6aca54a9e045f7a282397e21b4d6f3aa4dfcaa
     }
  
 }

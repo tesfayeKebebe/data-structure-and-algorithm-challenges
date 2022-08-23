@@ -15,10 +15,10 @@ namespace dotnetchallenge.Arrays
         {
             if (arr.Length > 1)
             {
-                int x = arr[arr.Length-1];
-                for (int i = arr.Length-2; i >0; i--)
+                int x = arr[arr.Length - 1];
+                for (int i = arr.Length - 2; i > 0; i--)
                 {
-                    arr[i+1] = arr[i];
+                    arr[i + 1] = arr[i];
                     Console.WriteLine(arr[i + 1]);
                 }
                 arr[0] = x;
@@ -75,13 +75,13 @@ namespace dotnetchallenge.Arrays
         public static string GetStringReverse(string s)
         {
             StringBuilder b = new StringBuilder();
-            for (int i = s.Length-1; i >= 0; i--)
+            for (int i = s.Length - 1; i >= 0; i--)
             {
                 b.Append(s[i]);
             }
             return b.ToString();
         }
-      
+
         public static int getFirstSetBit(int n)
         {
             // Special case
@@ -115,24 +115,24 @@ namespace dotnetchallenge.Arrays
                 {
                     Console.Write("*");
                 }
-            
+
                 Console.WriteLine();
             }
         }
-      public static List<string> merges(string[] words, string[] more)
+        public static List<string> merges(string[] words, string[] more)
         {
             List<string> sentence = new List<string>();
-             foreach (string w in words) sentence.Add(w);
-             foreach (var w in more) sentence.Add(w);
-             return sentence;
-            }
+            foreach (string w in words) sentence.Add(w);
+            foreach (var w in more) sentence.Add(w);
+            return sentence;
+        }
 
         //reversal approach of array rotation time complexity o(n) and auxilary place of o(1)
 
-        public static int[] RotateToLeft(int [] arr, int r)
+        public static int[] RotateToLeft(int[] arr, int r)
         {
             r %= arr.Length;
-            ReverseArr(arr, 0,r- 1);
+            ReverseArr(arr, 0, r - 1);
             ReverseArr(arr, r, arr.Length - 1);
             ReverseArr(arr, 0, arr.Length - 1);
             return arr;
@@ -149,7 +149,7 @@ namespace dotnetchallenge.Arrays
         }
         private static void ReverseArr(int[] arr, int start, int end)
         {
-            while(start<end)
+            while (start < end)
             {
                 int temp = arr[start];
                 arr[start] = arr[end];
@@ -169,9 +169,9 @@ answers (both index1 and index2) are not zero-based.
         {
             int[] result = new int[2];
             Dictionary<int, int> arr = new Dictionary<int, int>();
-            for(int i=0; i<nums.Length; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if(arr.ContainsKey(nums[i]))
+                if (arr.ContainsKey(nums[i]))
                 {
                     int index = arr[nums[i]];
                     result[0] = index + 1;
@@ -239,6 +239,154 @@ answers (both index1 and index2) are not zero-based.
             CallBfs(grid, i - 1, j); //row down
             CallBfs(grid, i, j + 1); //column right
             CallBfs(grid, i, j - 1);  //column left
+        }
+
+        public static Dictionary<int, int> CountDuplicates(int[] arr)
+        {
+            Dictionary<int, int> numbers = new Dictionary<int, int>();
+            foreach (var i in arr)
+            {
+                if (numbers.ContainsKey(arr[i])) numbers[i]++;
+                else numbers[i]=1;
+            }
+            return numbers;
+        }
+
+        public static int MaximumOfDuplicates(Dictionary<int, int> datas)
+        {
+            int temp = 0;
+            foreach(KeyValuePair<int, int> values in datas)
+            {
+                if(temp<values.Value)
+                {
+                    temp = values.Value;
+                }
+
+            }
+            return temp;
+        }
+        public static List<int> GetEvenNumberFromDuplicateArray(Dictionary<int, int> arr)
+        {
+            var datas = arr.Keys;
+            List<int> added = new List<int>();
+            foreach(KeyValuePair<int, int> values in arr)
+            {
+                if(values.Key %2 ==0)
+                {
+                    added.Add(values.Key);
+                }
+            }
+            return added;
+        }
+        public static int[] OrderArrayDesending(int[] arr)
+        {
+           
+            for(int i=0; i<arr.Length; i++)
+            {
+                for(int j=i+1; j<arr.Length; j++)
+                {
+                    if(arr[i]<arr[j])
+                    {
+                        int tem = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = tem;
+                    }
+                }
+            }
+            return arr;
+        }
+        public static int[] OrderArrayAssending(int[] arr)
+        {
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        int tem = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = tem;
+                    }
+                }
+            }
+            return arr;
+        }
+        public static int RemoveDuplicates(int[] nums)
+        {
+            if (nums.Length == 0)
+            {
+                return 0;
+            }
+            int i = 0;
+            int j = 1;
+            while (nums.Length > j)
+            {
+
+                if (nums[i] != nums[j])
+                {
+
+                    i++;
+                    nums[i] = nums[j];
+                }
+                j++;
+            }
+            return i + 1;
+        }
+        public static int ReturnNumbersNotInArray(int[] A)
+        {
+            int temp = A[0];
+            for (int i = 0; i < A.Length; i++)
+            {
+                for (int j = i+1; i < A.Length; i++)
+                {
+                    if (i > j)
+                    {
+                        temp = A[i];
+                        A[i] = A[j];
+                        A[j] = temp;
+                    }
+
+                }
+            }
+            temp = 0;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (A[i] > 0)
+                {
+                    if (A[i] != i + 1)
+                    {
+                        Console.WriteLine("this is a debug message", i + 1);
+                        return i + 1;
+                    }
+                    else
+                    {
+                        if (i == A.Length - 1)
+                        {
+                            Console.WriteLine("this is a debug message", i + 2);
+                            return i + 2;
+                        }
+                    }
+                }
+
+            }
+
+            return temp;
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+        }
+        public static List<int> GetDistinict(int[] arr)
+        {
+            List<int> dist = new List<int>();
+            List<int> convert = new List<int>(arr);
+            foreach(int item in convert)
+            {
+                int count = convert.Count(x => x == item);
+                if(count==1)
+                {
+                    dist.Add(item);
+                }
+            }
+            return dist;
         }
     }
 

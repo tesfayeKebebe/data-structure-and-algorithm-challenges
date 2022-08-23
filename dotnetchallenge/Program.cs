@@ -12,12 +12,27 @@ namespace dotnetchallenge
     {
         public static void Main(string[] args)
         {
+            var captil = StringChallenge.GetIndexOfCapitalLetter("jose LUJan");
+            var small = StringChallenge.GetIndexOfSmallLetter("jose LUJan");
+            var od=  StringChallenge.ReturnMiddleString("books");
+            var even = StringChallenge.ReturnMiddleString("coin");
+            var dist = ArrayChallenges.GetDistinict(new int[] { 1, 1, 2, 2, 3, 3, 4, 5, 5, 6 });
+            ArrayChallenges.ReturnNumbersNotInArray(new int[] { 1, 3, 6, 4, 1, 2 });
+            int vowels = StringChallenge.CountVowels("car");
       var missingNumber = NumberChallenge.SequncialMissingNumber(new int [] { 1, 2, 3, 5 });
       //var s = StringChallenge.ReverseString("tesfaye");
       //int x = int.Parse(Console.ReadLine());
-      int[] arr = new int[] { 1, 2, 5, 6, 8 };
-
-            //ArrayChallenges.ShiftingToLeft(arr);
+      int[] arr = new int[] { 1,1,  2,2, 5, 6,6,6, 8, 8, 8, 8, 8 };
+        var data=    ArrayChallenges.CountDuplicates(arr);
+            var maximumDuplicate = ArrayChallenges.MaximumOfDuplicates(data);
+            var evenNumbers = ArrayChallenges.GetEvenNumberFromDuplicateArray(data);
+            int[] arrs = new int[] { 1, 1, 2, 2, 8, 8, 8, 8, 8, 5, 6, 6, 6 };
+            int[] arr1 = new int[] { 1, 1, 2, 2, 8, 8, 8, 8, 8, 5, 6, 6, 6 };
+            var datas = ArrayChallenges.OrderArrayDesending(arrs);
+            var assending = ArrayChallenges.OrderArrayAssending(arr1);
+            var removeDu = ArrayChallenges.RemoveDuplicates(new int [] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 });
+            LinqChallenge.MethodsInLinQ();
+            ArrayChallenges.ShiftingToLeft(arr);
             //ArrayChallenges.ShiftingToRight(arr);
             //int x = 2;
             //    ArrayChallenges.Checkout(out x);

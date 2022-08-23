@@ -429,10 +429,66 @@ for (int r = i.Length - 1; r > 0; r--)
       return b.ToString();
     }
 
+        ///You need to create a function to takes a string and returns the middle characters(s).
+        ///If the words length is odd return the middle, buy if the words length is even return the middle 2 characters.
+        public static string ReturnMiddleString(string s)
+        {
+            char[] sArray = s.ToCharArray();
+            int midd = s.Length / 2;
+            if(s.Length%2==0)
+            {
+                return sArray[midd - 1].ToString() + sArray[midd].ToString();
+            }
+            return sArray[midd].ToString();
+        }
+
+
+        public List<string> GetAllPosts() => new List<string>();
+
+        public static int CountVowels(string s)
+        {
+            List<char> converted = new List<char>(s.ToLower().ToCharArray());
+            List<char> vowels = new List<char>(new char[] { 'a', 'e', 'i', 'o', 'u' });
+            int count = 0;
+            foreach(char item in converted)
+            {
+                int check = vowels.Count(x => x == item);
+                if(check>0)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        public static List<int> GetIndexOfCapitalLetter(string s)
+        {
+            List<int> retVal = new List<int>();
+            char[] arr = s.ToCharArray();
+            for(int i=0; i<arr.Length; i++)
+            {
+                if(arr[i]>='A' && arr[i]<='Z')
+                {
+                    retVal.Add(i);
+                }
+            }
+            return retVal;
+        }
+        public static List<int> GetIndexOfSmallLetter(string s)
+        {
+            List<int> retVal = new List<int>();
+            char[] arr = s.ToCharArray();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] >= 'a' && arr[i] <= 'z')
+                {
+                    retVal.Add(i);
+                }
+            }
+            return retVal;
+        }
 
 
 
-
-  }
     }
+}
 

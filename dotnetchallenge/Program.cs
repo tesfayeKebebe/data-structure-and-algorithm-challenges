@@ -12,8 +12,10 @@ namespace dotnetchallenge
     {
         public static void Main(string[] args)
         {
+            var n = ArrayChallenges.ReturnSmallestPositive(new int[] { 1, 3, 6, 4, 2 });
             var captil = StringChallenge.GetIndexOfCapitalLetter("jose LUJan");
             var small = StringChallenge.GetIndexOfSmallLetter("jose LUJan");
+            bool isAssending = ArrayChallenges.IsAssending(new int[] { 9, 17, 90, 106 });
             var od=  StringChallenge.ReturnMiddleString("books");
             var even = StringChallenge.ReturnMiddleString("coin");
             var dist = ArrayChallenges.GetDistinict(new int[] { 1, 1, 2, 2, 3, 3, 4, 5, 5, 6 });
@@ -98,13 +100,13 @@ namespace dotnetchallenge
             //var r=  BinaryTree.Recursive(binaryData, 0, binaryData.Length-1, 83);
             //var i=  BinaryTree.IterativeBinarySearch(binaryData, binaryData.Length, 83);
 
-            Node n = new Node(5);
-            n.AddingTail(6);
-            n.AddingTail(8);
-            n.AddingTail(8);
-            n.AddingTail(6);
-            n.AddingTail(5);
-            n.RemoveDeplicateLinkedList(n);
+            //Node n = new Node(5);
+            //n.AddingTail(6);
+            //n.AddingTail(8);
+            //n.AddingTail(8);
+            //n.AddingTail(6);
+            //n.AddingTail(5);
+            //n.RemoveDeplicateLinkedList(n);
             /*var notUnique=   StringChallenge.IsUniqueString("tesfaye");
                         var unique = StringChallenge.IsUniqueString("tesfa");
                  var bitVector = StringChallenge.IsUniqueStringWithMinimizedSpace("tesfaye");

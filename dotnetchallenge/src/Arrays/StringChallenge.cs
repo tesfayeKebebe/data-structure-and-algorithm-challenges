@@ -422,7 +422,7 @@ the original string. You can assume the string has only uppercase and lowercase 
     {
       char[] arr = i.ToCharArray();
       StringBuilder b = new StringBuilder();
-for (int r = i.Length - 1; r > 0; r--)
+for (int r = i.Length - 1; r >= 0; r--)
       {
         b.Append(arr[r]);
       }

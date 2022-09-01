@@ -388,6 +388,78 @@ answers (both index1 and index2) are not zero-based.
             }
             return dist;
         }
+        public static bool IsAssending(int[] arr)
+        {
+            for(int i=0; i<arr.Length-1;i++)
+            {
+                if(arr[i]> arr[i+1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        /*
+         * This is a demo task.
+
+Write a function:
+
+class Solution { public int solution(int[] A); }
+
+that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+
+For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+
+Given A = [1, 2, 3], the function should return 4.
+
+Given A = [−1, −3], the function should return 1.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..100,000];
+each element of array A is an integer within the range [−1,000,000..1,000,000].
+Copyright 2009–2022 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+         */
+        public static int ReturnSmallestPositive(int[] A)
+        {
+            int[] o = order(A);
+           
+            for (int i = 0; i < o.Length; i++)
+            {
+                if (o[i] > 0)
+                {
+                    if (i + 1 != o[i])
+                    {
+                        return i + 1;
+                    }
+                    if (i + 1 == o.Length)
+                    {
+                        return i + 2;
+                    }
+                }
+            }
+            return 1;
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+
+        }
+        private static int[] order(int[] A)
+        {
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                for (int j = i + 1; j < A.Length; j++)
+                {
+                    if (A[i] > A[j])
+                    {
+                        int temp = A[i];
+                        A[i] = A[j];
+                        A[j] = temp;
+
+                    }
+                }
+            }
+            return A;
+        }
     }
 
   }
